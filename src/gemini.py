@@ -66,6 +66,7 @@ class MyGemini:
         self.model.count_tokens(prompt)
 
     def ask(self, txt) -> str:
+        # TODO: Separar prompt engineer
         context = [f"The user name is {os.getlogin()}",
                    f"The user is using {platform.system()} {platform.release()}",
                    "Answer the question in the language of was made"]

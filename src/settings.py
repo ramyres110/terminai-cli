@@ -1,18 +1,7 @@
-from pathlib import Path
 from configparser import ConfigParser
+from pathlib import Path
 
-HOMEDIR = str(Path.home())
-CONFIG_SECTION = "config"
-
-ENV_FILE_PATH = f"{HOMEDIR}\\.terminai"
-
-TERMINAI_ENV = {
-    "envfile": ENV_FILE_PATH,
-    "api": "gemini",
-    "model": "gemini-1.5-pro-latest",
-    "apikey": ""
-}
-
+from .constants import ENV_FILE_PATH, CONFIG_SECTION, TERMINAI_ENV
 class Setting:
     envfile = TERMINAI_ENV["envfile"]
     api = TERMINAI_ENV["api"]
@@ -22,7 +11,7 @@ class Setting:
     def __init__(self) -> None:
         settings = self.loadSettings()
         self.envfile = settings["envfile"]
-        self.api = settings["api"]
+        self.api = settings["api"]  
         self.model = settings["model"]
         self.apikey = settings["apikey"]
 

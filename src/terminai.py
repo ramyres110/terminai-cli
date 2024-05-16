@@ -8,21 +8,7 @@ path.append(parent)
 
 from src.settings import Setting
 from src.gemini import MyGemini
-
-HELP_TEXT="""
-TerminAI: LLM AI for terminal.
-Use: terminai ["prompt" | options]
-* prompt: llm prompt
-* options:
-    -h or --help: Show this
-    -s or --setup: Open config file 
-        Configs:
-            api *default Gemini
-            model *default gemini-1.5-pro-latest
-            apikey *Gen at <https://aistudio.google.com/app/apikey>
-    --list-api: Show implemented APIs
-    --list-models: Show list of models at API
-"""
+from src.constants import HELP_TEXT
 
 class App:
     setting = None
@@ -49,28 +35,31 @@ class App:
             else:
                 print(f"- {m}")
 
+    def send_prompt(self, text):
+        resp = self.model.ask(text)
+        print(resp)
+
     def run(self):
         if len(argv) == 1:
             self.show_help()
-        elif len(argv) == 2:        
-            if argv[1] in ["-h", "--help"]:
-                self.show_help()
-            elif argv[1] in ["-s", "--setup"]:
-                self.open_configfile()
-            elif argv[1] in ["--list-api"]:
-                self.list_apis()
-            elif argv[1] in ["--list-models"]:
-                self.list_models()
-            elif argv[1].strip() == "":
+        elif len(argv) == 2:   
+            param = argv[1]
+            
+            if param.strip() == "":
                 print("Invalid prompt!")
+            elif param in ["-h", "--help"]:
+                self.show_help()
+            elif param in ["-s", "--setup"]:
+                self.open_configfile()
+            elif param in ["--list-api"]:
+                self.list_apis()
+            elif param in ["--list-models"]:
+                self.list_models()
             else:
-                prompt = argv[1].strip()
-                resp = self.model.ask(prompt)
-                print(resp)
+                self.send_prompt(param.strip())
         else:
             print("Invalid!!")
-            self.show_help()
-            
+            self.show_help()            
             
 if __name__ == "__main__":
     app = App()
