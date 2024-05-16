@@ -1,3 +1,4 @@
+![](assets/tai_img_capa.jpg)
 # TerminAI 
 
 Apresento uma aplicação de terminal que utiliza o poder do Gemini (inicialmente) para responder às suas dúvidas diretamente do console.
