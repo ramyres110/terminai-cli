@@ -3,12 +3,24 @@
 @echo off
 setlocal
 
-set currentdir=%cd%
-set srcdir=%currentdir:~0,-4%\src\
+set batfiledir=%~dp0
+set appdir=%batfiledir:~0,-5%
+
+:: ativar ambiente
+set envdir=%appdir%\env\
+if exist %envdir% (
+    call %envdir%Scripts\activate.bat
+)
+
+:: src
+set srcdir=%appdir%\src\
 cd %srcdir%
-set terminaipy=%currentdir:~0,-4%\src\terminai.py
+
+:: app
+set terminaipy=%srcdir%terminai.py
 set arg1=%1
 set arg2=%2
+
 :: run terminai
 python %terminaipy% %arg1% %arg2%
 
