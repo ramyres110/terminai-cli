@@ -1,19 +1,19 @@
+# Tai 
 ![](assets/tai_img_capa.jpg)
-# TerminAI 
 
 Apresento uma aplicação de terminal que utiliza o poder do Gemini (inicialmente) para responder às suas dúvidas diretamente do console.
 
 **Funcionalidades:**
 
 * Interface simples e intuitiva via linha de comando.
-* Acesso rápido à vasta base de conhecimento do Gemini.
+* Acesso rápido à vasta base de conhecimento do Gemini (_somente ele por enquanto_).
 * Resultados concisos e relevantes para suas perguntas.
-* Ideal para encontrar soluções rápidas durante o desenvolvimento.
+* Ideal para encontrar soluções rápidas durante o uso do terminal/desenvolvimento.
 
 **Exemplo de uso:**
 
 ```
->> terminai "Como iterar sobre um dicionário em Python?"
+>> tai "Como iterar sobre um dicionário em Python?"
 ```
 
 A aplicação consultará o Gemini e retornará a resposta diretamente no seu terminal.
@@ -37,7 +37,18 @@ pip install -r requirements.txt
 ## Uso
 
 1. Setup API KEY
+```bash
+tai --setup
+```
+
+* configure o apikey={{API do AI Studio <https://aistudio.google.com/app/apikey> }}
+
 2. Ask with:
 ```
-teminai "How can I use Google"
+tai "How can I use Google"
+```
+
+3. Ajuda
+```
+tai --help
 ```
