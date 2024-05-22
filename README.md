@@ -52,3 +52,22 @@ tai "How can I use Google"
 ```
 tai --help
 ```
+
+## ToDo
+- [ ] Adicionar configuração do parâmetro **Temperatura**
+- [ ] Adicionar configuração do parâmetro **Top P**
+- [ ] Adicionar configuração do parâmetro **Top K**
+- [ ] Adicionar configuração do parâmetro **Max Output Tokens**
+- [ ] Adicionar controle de consumo de Tokens
+- [ ] Adicionar _system instructions_ as configurações
+- [ ] Alterar o contexto com _prompt engineering_ selecionando técnicas, tipo:
+    * Few-shot Prompting
+    * Chain-of-Thought Prompting
+    * Self-Consistency
+    * Generate Knowledge Prompting
+    * Prompt Chaining, etc
+- [ ] Adicinar opção de chat, mantendo o histórico
+- [ ] Adicionar funcionalidade com OpenAI ChatGPT
+- [ ] Adicionar funcionalidade com LLAMA
+- [ ] Adicionar funcionalidade para Linux (Somente Windows no momento)
+- [ ] Adicionar pacote ao PIP
