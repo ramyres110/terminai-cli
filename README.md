@@ -71,3 +71,4 @@ tai --help
 - [ ] Adicionar funcionalidade com LLAMA
 - [ ] Adicionar funcionalidade para Linux (Somente Windows no momento)
 - [ ] Adicionar pacote ao PIP
+- [ ] Criar script para instalação/instalador
