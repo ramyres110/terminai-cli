@@ -12,11 +12,9 @@ from src.constants import HELP_TEXT
 
 class App:
     setting = None
-    model = None
 
     def __init__(self) -> None:
         self.setting = Setting()
-        self.model = MyGemini(self.setting)
 
     def show_help(self):
         print(HELP_TEXT)
@@ -28,15 +26,17 @@ class App:
         print(self.setting.api)
 
     def list_models(self):
+        model = MyGemini(self.setting)
         print(f"For API {self.setting.api}")       
-        for m in self.model.list_model():
+        for m in model.list_model():
             if m == f"models/{self.setting.model}":
                 print(f"* {m}")
             else:
                 print(f"- {m}")
 
     def send_prompt(self, text):
-        resp = self.model.ask(text)
+        model = MyGemini(self.setting)
+        resp = model.ask(text)
         print(resp)
 
     def run(self):

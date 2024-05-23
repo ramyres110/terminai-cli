@@ -54,6 +54,7 @@ tai --help
 ```
 
 ## ToDo
+- [ ] Adicionar comando para configurar API KEY
 - [ ] Adicionar configuração do parâmetro **Temperatura**
 - [ ] Adicionar configuração do parâmetro **Top P**
 - [ ] Adicionar configuração do parâmetro **Top K**

@@ -12,8 +12,7 @@ class MyGemini:
     def configure(self, setting: Setting):
         if (setting.apikey.strip() == ""):
             raise Exception("API Key Not Found")
-        genai.configure(api_key=setting.apikey)
-        
+                
         if (setting.model.strip() == ""):
             raise Exception("Model name Not Found")
         
@@ -46,6 +45,8 @@ class MyGemini:
 
         system_instruction = "Act like tech expert and be more succint"
 
+        genai.configure(api_key=setting.apikey)
+        
         model = genai.GenerativeModel(
             model_name=setting.model,
             generation_config=generation_config,
